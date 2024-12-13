@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #0a0f23;" xmlns="http://javafx.com/javafx/8f" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FinanceApplication.CalcController">
+   <children>
+      <!-- Navigation Buttons -->
+      <Button fx:id="dashboard" onAction="#goToDashboard" layoutX="20.0" layoutY="0.0" 
+              mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" 
+              style="-fx-background-color: #181e38;  -fx-text-fill: white; -fx-font-size: 14px;" 
+              text="Dashboard" />
+      <Button fx:id="table" onAction="#goToDictionary" layoutX="160.0" layoutY="0.0" 
+              mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" 
+              style="-fx-background-color: #181e38;  -fx-text-fill: white; -fx-font-size: 14px;" 
+              text="Dictionary" />
+      <Button fx:id="income" onAction="#goToIncome" layoutX="300.0" layoutY="0.0" 
+              mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" 
+              style="-fx-background-color: #181e38;  -fx-text-fill: white; -fx-font-size: 14px;" 
+              text="Income" />
+      <Button fx:id="expense" onAction="#goToExpense" layoutX="440.0" layoutY="0.0" 
+              mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" 
+              style="-fx-background-color: #181e38;  -fx-text-fill: white; -fx-font-size: 14px;" 
+              text="Expenses" />
+
+      <!-- Input and Result Display -->
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#181e38" height="80.0" 
+                 layoutX="30.0" layoutY="60.0" stroke="BLACK" strokeType="INSIDE" width="540.0" />
+      <Label fx:id="calculationLabel" layoutX="40.0" layoutY="70.0" 
+             prefWidth="520.0" prefHeight="30.0" 
+             style="-fx-background-color: transparent; -fx-font-size: 16px; -fx-text-fill: white; -fx-alignment: center-right;" 
+             text="" />
+      <Label fx:id="totalIncomeLabel" layoutX="40.0" layoutY="100.0" 
+             prefWidth="520.0" prefHeight="40.0" 
+             style="-fx-background-color: transparent; -fx-font-size: 24px; -fx-text-fill: lightgreen; -fx-alignment: center-right;" 
+             text="0" />
+
+      <!-- Calculator Buttons -->
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#181e38" height="320.0" 
+                 layoutX="30.0" layoutY="140.0" stroke="BLACK" strokeType="INSIDE" width="540.0" />
+
+      <Button fx:id="num1" layoutX="50.0" layoutY="160.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="1" onAction="#handleNum1" />
+      <Button fx:id="num2" layoutX="160.0" layoutY="160.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="2" onAction="#handleNum2" />
+      <Button fx:id="num3" layoutX="270.0" layoutY="160.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="3" onAction="#handleNum3" />
+      <Button fx:id="plus" layoutX="380.0" layoutY="160.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="+" onAction="#handlePlus" />
+
+      <Button fx:id="num4" layoutX="50.0" layoutY="230.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="4" onAction="#handleNum4" />
+      <Button fx:id="num5" layoutX="160.0" layoutY="230.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="5" onAction="#handleNum5" />
+      <Button fx:id="num6" layoutX="270.0" layoutY="230.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="6" onAction="#handleNum6" />
+      <Button fx:id="minus" layoutX="380.0" layoutY="230.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="-" onAction="#handleMinus" />
+
+      <Button fx:id="num7" layoutX="50.0" layoutY="300.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="7" onAction="#handleNum7" />
+      <Button fx:id="num8" layoutX="160.0" layoutY="300.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="8" onAction="#handleNum8" />
+      <Button fx:id="num9" layoutX="270.0" layoutY="300.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="9" onAction="#handleNum9" />
+      <Button fx:id="multiply" layoutX="380.0" layoutY="300.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="*" onAction="#handleMultiply" />
+
+      <Button fx:id="del" layoutX="50.0" layoutY="370.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="C" onAction="#handleDel" />
+      <Button fx:id="num0" layoutX="160.0" layoutY="370.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="0" onAction="#handleNum0" />
+      <Button fx:id="equal" layoutX="270.0" layoutY="370.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="=" onAction="#handleEqual" />
+      <Button fx:id="divide" layoutX="380.0" layoutY="370.0" mnemonicParsing="false" 
+              prefHeight="60.0" prefWidth="100.0" 
+              style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-radius: 10px;" 
+              text="/" onAction="#handleDivide" />
+   </children>
+</AnchorPane>

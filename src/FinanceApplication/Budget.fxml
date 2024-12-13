@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="grid" alignment="center" hgap="20" vgap="20" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="FinanceApplication.BudgetController" 
+          style="-fx-padding: 30; -fx-background-color: #121212;">
+    
+    <!-- Column Constraints for Resizing -->
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50"/>
+        <ColumnConstraints percentWidth="50"/>
+    </columnConstraints>
+
+    <!-- Row Constraints for Resizing -->
+    <rowConstraints>
+        <RowConstraints minHeight="30" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="30" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="30" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="30" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="30" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="30" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="30" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="30" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="30" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="30" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="100" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="100" vgrow="ALWAYS"/>
+    </rowConstraints>
+
+    <!-- Title -->
+    <Label text="Total Budget" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #BB86FC;" 
+           GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"
+           GridPane.halignment="center"/>
+
+    <!-- Income Section -->
+    <Label text="Income Source:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: #FFFFFF;"/>
+    <TextField fx:id="incomeSourceField" GridPane.columnIndex="0" GridPane.rowIndex="2"
+               style="-fx-background-color: #1E1E1E; -fx-text-fill: #FFFFFF; -fx-border-color: #BB86FC;"/>
+               
+    <Label text="Income Amount:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-text-fill: #FFFFFF;"/>
+    <TextField fx:id="incomeAmountField" GridPane.columnIndex="0" GridPane.rowIndex="4"
+               style="-fx-background-color: #1E1E1E; -fx-text-fill: #FFFFFF; -fx-border-color: #BB86FC;"/>
+
+    <Button text="Add Income" onAction="#handleAddIncome" GridPane.columnIndex="0" GridPane.rowIndex="5"
+            style="-fx-font-size: 16px; -fx-background-color: #03DAC6; -fx-text-fill: #121212;"/>
+
+    <!-- Expense Section -->
+    <Label text="Expense Category:" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-text-fill: #FFFFFF;"/>
+    <TextField fx:id="expenseCategoryField" GridPane.columnIndex="1" GridPane.rowIndex="2"
+               style="-fx-background-color: #1E1E1E; -fx-text-fill: #FFFFFF; -fx-border-color: #BB86FC;"/>
+               
+    <Label text="Expense Amount:" GridPane.columnIndex="1" GridPane.rowIndex="3" style="-fx-text-fill: #FFFFFF;"/>
+    <TextField fx:id="expenseAmountField" GridPane.columnIndex="1" GridPane.rowIndex="4"
+               style="-fx-background-color: #1E1E1E; -fx-text-fill: #FFFFFF; -fx-border-color: #BB86FC;"/>
+
+    <Button text="Add Expense" onAction="#handleAddExpense" GridPane.columnIndex="1" GridPane.rowIndex="5"
+            style="-fx-font-size: 16px; -fx-background-color: #CF6679; -fx-text-fill: #FFFFFF;"/>
+
+    <!-- Dashboard Section -->
+    <Label text="Total Income:" GridPane.columnIndex="0" GridPane.rowIndex="6" style="-fx-text-fill: #FFFFFF;"/>
+    <Label fx:id="totalIncomeLabel" GridPane.columnIndex="1" GridPane.rowIndex="6" style="-fx-text-fill: #03DAC6;"/>
+
+    <Label text="Total Expenses:" GridPane.columnIndex="0" GridPane.rowIndex="7" style="-fx-text-fill: #FFFFFF;"/>
+    <Label fx:id="totalExpensesLabel" GridPane.columnIndex="1" GridPane.rowIndex="7" style="-fx-text-fill: #CF6679;"/>
+
+    <Label text="Net Balance:" GridPane.columnIndex="0" GridPane.rowIndex="8" style="-fx-text-fill: #FFFFFF;"/>
+    <Label fx:id="netBalanceLabel" GridPane.columnIndex="1" GridPane.rowIndex="8" style="-fx-text-fill: #BB86FC;"/>
+
+    <Button text="Refresh Dashboard" onAction="#handleRefresh" GridPane.columnIndex="0" GridPane.rowIndex="9" GridPane.columnSpan="2"
+            style="-fx-font-size: 16px; -fx-background-color: #BB86FC; -fx-text-fill: #121212;"/>
+
+    <!-- History Section -->
+    <Label text="Income History:" GridPane.columnIndex="0" GridPane.rowIndex="10" GridPane.halignment="center" 
+           style="-fx-text-fill: #BB86FC;"/>
+    <ListView fx:id="incomeList" GridPane.columnIndex="0" GridPane.rowIndex="11" 
+              style="-fx-pref-height: 100px; -fx-background-color: #1E1E1E; -fx-text-fill: #FFFFFF; -fx-border-color: #BB86FC;"/>
+
+    <Label text="Expense History:" GridPane.columnIndex="1" GridPane.rowIndex="10" GridPane.halignment="center"
+           style="-fx-text-fill: #BB86FC;"/>
+    <ListView fx:id="expenseList" GridPane.columnIndex="1" GridPane.rowIndex="11" 
+              style="-fx-pref-height: 100px; -fx-background-color: #1E1E1E; -fx-text-fill: #FFFFFF; -fx-border-color: #BB86FC;"/>
+
+    <!-- Save and Load Buttons -->
+    <Button text="Save" onAction="#handleSave" GridPane.columnIndex="0" GridPane.rowIndex="12" 
+            style="-fx-font-size: 14px; -fx-background-color: #03DAC6; -fx-text-fill: #121212;"/>
+    <Button text="Load" onAction="#handleLoad" GridPane.columnIndex="1" GridPane.rowIndex="12" 
+            style="-fx-font-size: 14px; -fx-background-color: #BB86FC; -fx-text-fill: #121212;"/>
+
+    <!-- Back Button -->
+    <Button text="Back" onAction="#handleBack" GridPane.columnIndex="0" GridPane.rowIndex="13" GridPane.columnSpan="2"
+            style="-fx-font-size: 16px; -fx-pref-width: 120px; -fx-background-color: #03DAC6; -fx-text-fill: #121212;"/>
+            
+    
+
+</GridPane>

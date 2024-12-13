@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0a0f23;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FinanceApplication.IncomeController">
+   <children>
+      <!-- Navigation Buttons -->
+      <Button fx:id="dashboard" onAction="#goToDashboard" mnemonicParsing="false" prefHeight="29.0" prefWidth="200.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Dashboard">
+         <AnchorPane.topAnchor>0.0</AnchorPane.topAnchor>
+         <AnchorPane.leftAnchor>0.0</AnchorPane.leftAnchor>
+      </Button>
+      <Button fx:id="dictionary" onAction="#goToDictionary" mnemonicParsing="false" prefHeight="29.0" prefWidth="200.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Dictionary">
+         <AnchorPane.topAnchor>0.0</AnchorPane.topAnchor>
+         <AnchorPane.leftAnchor>200.0</AnchorPane.leftAnchor>
+      </Button>
+      <Button fx:id="income" onAction="#goToIncome" mnemonicParsing="false" prefHeight="29.0" prefWidth="200.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Income">
+         <AnchorPane.bottomAnchor>0.0</AnchorPane.bottomAnchor>
+         <AnchorPane.leftAnchor>0.0</AnchorPane.leftAnchor>
+      </Button>
+      <Button fx:id="expenses" onAction="#goToExpense" mnemonicParsing="false" prefHeight="29.0" prefWidth="200.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Expenses">
+         <AnchorPane.bottomAnchor>0.0</AnchorPane.bottomAnchor>
+         <AnchorPane.leftAnchor>200.0</AnchorPane.leftAnchor>
+      </Button>
+      <Button fx:id="calc" onAction="#goToCalc" mnemonicParsing="false" prefHeight="29.0" prefWidth="200.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Quick Calc">
+         <AnchorPane.bottomAnchor>0.0</AnchorPane.bottomAnchor>
+         <AnchorPane.rightAnchor>0.0</AnchorPane.rightAnchor>
+      </Button>
+      <Button fx:id="settings" onAction="#goToSettings" mnemonicParsing="false" prefHeight="29.0" prefWidth="200.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Settings">
+         <AnchorPane.topAnchor>0.0</AnchorPane.topAnchor>
+         <AnchorPane.rightAnchor>0.0</AnchorPane.rightAnchor>
+      </Button>
+
+      <!-- Rectangle enclosing Income Source section -->
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#181e38" height="165.0" layoutX="150.0" layoutY="40.0" width="400.0" />
+
+      <!-- Income Source Section -->
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Income Source:" layoutX="165.0" layoutY="78.0"/>
+      <TextField fx:id="sourceField" style="-fx-background-color: WHITE; -fx-text-fill: BLACK; -fx-border-color: BLACK;" layoutX="270.0" layoutY="66.0" prefWidth="250.0"/>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:" layoutX="165.0" layoutY="116.0"/>
+      <TextField fx:id="amountField" style="-fx-background-color: WHITE; -fx-text-fill: BLACK; -fx-border-color: BLACK;" layoutX="270.0" layoutY="104.0" prefWidth="250.0"/>
+      <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="256.0" text="Add Income" onAction="#handleAddIncome" layoutX="166.0" layoutY="151.0"/>
+
+      <!-- Income List -->
+      <ListView fx:id="incomeList" style="-fx-background-color: #0a0f23;" layoutX="22.0" layoutY="220.0" prefWidth="556.0" prefHeight="123.0"/>
+   </children>
+</AnchorPane>

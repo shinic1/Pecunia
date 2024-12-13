@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane fx:id="grid" alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml" fx:controller="FinanceApplication.MainController">
+    <Button text="Manage Budget" onAction="#goToBudget" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <Button text="Income" onAction="#goToIncome" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Button text="Expenses" onAction="#goToExpense" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Button text="Financial Dictionary" onAction="#goToDictionary" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <Button text="Dashboard" onAction="#goToDashboard" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+</GridPane>

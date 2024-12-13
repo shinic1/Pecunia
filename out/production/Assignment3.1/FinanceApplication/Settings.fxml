@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="FinanceApplication.SettingsController"
+            fx:id="rootPane"
+            prefWidth="800.0" prefHeight="600.0"
+            style="-fx-background-color: #0a0f23;">
+
+    <!-- Rectangle enclosing all settings -->
+    <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#181e38" 
+               layoutX="150.0" layoutY="100.0" 
+               width="500.0" height="400.0" />
+
+    <!-- Title -->
+    <Label text="Settings" layoutX="340.0" layoutY="120.0" 
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+    <!-- Currency Settings -->
+    <Label text="Currency:" layoutX="200.0" layoutY="200.0" 
+           style="-fx-font-size: 16px; -fx-text-fill: white;"/>
+    <ComboBox fx:id="currencyComboBox" layoutX="300.0" layoutY="195.0" 
+              prefWidth="300.0"
+              style="-fx-font-size: 16px; -fx-background-color: #181e38; -fx-text-fill: white;"/>
+
+    <!-- Light/Dark Mode Toggle -->
+    <Label text="Theme Mode:" layoutX="200.0" layoutY="250.0" 
+           style="-fx-font-size: 16px; -fx-text-fill: white;"/>
+    <RadioButton fx:id="lightModeRadio" text="Dark Mode" layoutX="300.0" layoutY="245.0" 
+                 style="-fx-font-size: 16px; -fx-text-fill: white;"/>
+    <RadioButton fx:id="darkModeRadio" text="Light Mode" layoutX="300.0" layoutY="275.0" 
+                 style="-fx-font-size: 16px; -fx-text-fill: white;"/>
+
+    <!-- Save and Cancel Buttons -->
+    <Button text="Save" onAction="#handleSaveSettings" layoutX="300.0" layoutY="350.0" 
+            prefWidth="100.0" prefHeight="30.0"
+            style="-fx-font-size: 16px; -fx-background-color: #1c2541; -fx-text-fill: white;"/>
+    <Button text="Cancel" onAction="#handleCancel" layoutX="420.0" layoutY="350.0" 
+            prefWidth="100.0" prefHeight="30.0"
+            style="-fx-font-size: 16px; -fx-background-color: #1c2541; -fx-text-fill: white;"/>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane  prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="FinanceApplication.LoginController" style="-fx-background-color: #0a0f23;">
+    <children>
+        <VBox alignment="CENTER" spacing="20" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" style="-fx-background-color: #0a0f23;">
+            
+            <!-- Application Title -->
+            <Label text="Finance Application" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF;" VBox.vgrow="NEVER" />
+
+            <!-- Username Field -->
+            <TextField fx:id="usernameField" promptText="Enter Username" style="-fx-background-color: #181e38; -fx-text-fill: #FFFFFF; -fx-border-color: #1c2541; -fx-padding: 10;" VBox.vgrow="NEVER" />
+
+            <!-- Password Field -->
+            <PasswordField fx:id="passwordField" promptText="Enter Password" style="-fx-background-color: #181e38; -fx-text-fill: #FFFFFF; -fx-border-color: #1c2541; -fx-padding: 10;" VBox.vgrow="NEVER" />
+
+            <!-- Buttons -->
+            <HBox spacing="15" alignment="CENTER" VBox.vgrow="NEVER">
+                <Button text="Login" onAction="#handleLogin" style="-fx-font-size: 16px; -fx-background-color: #1c2541; -fx-text-fill: #FFFFFF; -fx-padding: 10;" />
+                <Button text="Register" onAction="#handleRegister" style="-fx-font-size: 16px; -fx-background-color: #181e38; -fx-text-fill: #FFFFFF; -fx-padding: 10;" />
+            </HBox>
+        </VBox>
+    </children>
+    <padding>
+        <Insets top="20" left="20" right="20" bottom="20" />
+    </padding>
+</AnchorPane>

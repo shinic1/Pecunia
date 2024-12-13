@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #0a0f23;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FinanceApplication.DashboardController">
+    <!-- Other children elements -->
+
+   <children>
+      <!-- Top Navigation Buttons -->
+      <Button fx:id="dashboard" onAction="#goToDashboard" layoutX="0.0" layoutY="0.0" prefHeight="29.0" prefWidth="266.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Dashboard" />
+      <Button fx:id="dictionary" onAction="#goToDictionary" layoutX="266.0" layoutY="0.0" prefHeight="29.0" prefWidth="266.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Dictionary" />
+      <Button fx:id="settings" onAction="#goToSettings" layoutX="532.0" layoutY="0.0" prefHeight="29.0" prefWidth="266.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Settings" />
+
+      <!-- Remaining Balance Section -->
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#181e38" height="90.0" layoutX="10.0" layoutY="40.0" width="240.0" />
+      <Text fill="WHITE" layoutX="20.0" layoutY="60.0" text="Remaining Balance" />
+      <Label fx:id="netBalanceLabel" style="-fx-text-fill: white; -fx-font-size: 16px;" layoutX="20.0" layoutY="80.0" />
+
+      <!-- Next Payment Date Section -->
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#181e38" height="90.0" layoutX="10.0" layoutY="140.0" width="240.0" />
+      <Text fill="WHITE" layoutX="20.0" layoutY="160.0" text="Next Payment Date" />
+      <TextField fx:id="nextPaymentDateField" layoutX="20.0" layoutY="180.0" style="-fx-text-fill: white; -fx-background-color: #181e38;" editable="false" />
+
+      <!-- Total Income Section -->
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#181e38" height="90.0" layoutX="260.0" layoutY="40.0" width="240.0" />
+      <Text fill="WHITE" layoutX="270.0" layoutY="60.0" text="Total Income" />
+      <Label fx:id="totalIncomeLabel" style="-fx-text-fill: white; -fx-font-size: 16px;" layoutX="270.0" layoutY="80.0" />
+
+      <!-- Total Expenses Section -->
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#181e38" height="90.0" layoutX="260.0" layoutY="140.0" width="240.0" />
+      <Text fill="WHITE" layoutX="270.0" layoutY="160.0" text="Total Expenses" />
+      <Label fx:id="totalExpensesLabel" style="-fx-text-fill: white; -fx-font-size: 16px;" layoutX="270.0" layoutY="180.0" />
+
+     <!-- Combined Section for Upcoming Payments and Adding Payments -->
+<Rectangle arcHeight="20.0" arcWidth="20.0" fill="#181e38" height="520.0" layoutX="550.0" layoutY="40.0" width="240.0" />
+<Text fill="WHITE" layoutX="560.0" layoutY="60.0" text="Upcoming Payments" />
+<ListView fx:id="upcomingPaymentsList" layoutX="560.0" layoutY="80.0" prefHeight="160.0" prefWidth="220.0" />
+
+<!-- Sort Payments Section -->
+<Text fill="WHITE" layoutX="560.0" layoutY="250.0" text="Sort Payments:" />
+<ComboBox fx:id="sortComboBox" layoutX="560.0" layoutY="260.0" prefWidth="220.0" 
+          promptText="Select sorting criteria" 
+          style="-fx-background-color: #181e38; -fx-text-fill: white; -fx-prompt-text-fill: white;" />
+
+<!-- Budget Goal Section -->
+<Rectangle arcHeight="20.0" arcWidth="20.0" fill="#181e38" height="240.0" layoutX="10.0" layoutY="240.0" width="490.0" />
+<Text fill="WHITE" layoutX="20.0" layoutY="260.0" text="Budget Goal Progress" />
+<Label fx:id="budgetGoalLabel" style="-fx-text-fill: white;" layoutX="20.0" layoutY="280.0" />
+<ProgressBar fx:id="budgetGoalProgressBar" layoutX="20.0" layoutY="300.0" prefWidth="460.0" />
+<TextField fx:id="budgetGoalField" layoutX="20.0" layoutY="330.0" prefWidth="460.0" 
+           promptText="Enter monthly goal" style="-fx-background-color: #1c2541; -fx-text-fill: white;" />
+<Button fx:id="setBudgetGoalButton" layoutX="20.0" layoutY="370.0" prefWidth="120.0" 
+        text="Set Goal" onAction="#handleSetBudgetGoal" 
+        style="-fx-background-color: #1c2541; -fx-text-fill: white;" />
+
+
+
+
+<!-- Add Payment Details Section -->
+<Text fill="WHITE" layoutX="560.0" layoutY="300.0" text="Add Payment Details" />
+<Text fill="WHITE" layoutX="560.0" layoutY="320.0" text="Description:" />
+<TextField fx:id="paymentDescriptionField" layoutX="560.0" layoutY="340.0" prefWidth="220.0" style="-fx-background-color: #1c2541; -fx-text-fill: white; -fx-border-color: #1c2541; -fx-padding: 5;" />
+<Text fill="WHITE" layoutX="560.0" layoutY="380.0" text="Due Date:" />
+<DatePicker fx:id="paymentDatePicker" layoutX="560.0" layoutY="400.0" prefWidth="220.0" style="-fx-background-color: #1c2541; -fx-text-fill: white; -fx-border-color: #1c2541;" />
+<Text fill="WHITE" layoutX="560.0" layoutY="440.0" text="Amount:" />
+<TextField fx:id="paymentAmountField" layoutX="560.0" layoutY="460.0" prefWidth="220.0" style="-fx-background-color: #1c2541; -fx-text-fill: white; -fx-border-color: #1c2541; -fx-padding: 5;" />
+<CheckBox fx:id="recurringCheckBox" layoutX="560.0" layoutY="490.0" text="Recurring Payment" style="-fx-text-fill: white;" />
+
+
+<!-- Save and Delete Buttons -->
+<HBox layoutX="552.0" layoutY="515.0" spacing="10">
+    <Button fx:id="savePaymentButton" onAction="#handleSavePayment" text="Save Payment" style="-fx-background-color: #1c2541; -fx-text-fill: white; -fx-font-size: 14px;" />
+    <Button fx:id="deletePaymentButton" onAction="#handleDeletePayment" text="Delete Payment" style="-fx-background-color: #1c2541; -fx-text-fill: white; -fx-font-size: 14px;" />
+</HBox>
+
+
+
+      <!-- Bottom Navigation Buttons -->
+      <Button fx:id="income" onAction="#goToIncome" layoutX="0.0" layoutY="571.0" prefHeight="29.0" prefWidth="266.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Income" />
+      <Button fx:id="expenses" onAction="#goToExpense" layoutX="266.0" layoutY="571.0" prefHeight="29.0" prefWidth="266.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Expenses" />
+      <Button fx:id="calc" onAction="#goToCalc" layoutX="532.0" layoutY="571.0" prefHeight="29.0" prefWidth="266.0" style="-fx-background-color: #181e38;  -fx-text-fill: white;" text="Quick Calc" />
+   </children>
+</AnchorPane>
